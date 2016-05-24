@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+        xmlns:sec="http://www.springframework.org/security/tags">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+    <div th:fragment="headerscripts" th:remove="tag">
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
+        <link href="../../resources/css/project.css"
+              th:href="@{/resources/css/project.css}" rel="stylesheet" />
+        <script src="../../../resources/static/bower_components/jquery/dist/jquery.js"/>
+
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"/>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/holder/2.9.3/holder.min.js"/>
+    </div>
+
+</head>
+<body>
+
+Navbar
+<div class="navbar navbar-inverse navbar-fixed-top" th:fragment="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#" th:href="@{/}"><span class="glyphicon glyphicon-home" aria-hidden="true"/></a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <!--<li th:classappend="${page == 'home' ? 'active' : ''}">-->
+                    <!--<a href="#" th:href="@{/}" th:text="#{nav.page.home.title}">Home</a></li>-->
+                <li th:if="${#authorization.expression('isAuthenticated()')}" th:classappend="${page == 'sensors' ? 'active' : ''}">
+                    <a href="#" th:href="@{/sensors/list}" th:text="#{nav.page.sensors.title}">Your sensors</a></li>
+                <li th:if="${#authorization.expression('isAuthenticated()')}" th:classappend="${page == 'analytics' ? 'active' : ''}">
+                    <a href="#" th:href="@{/sensors/list}" th:text="#{nav.page.analytics.title}">Analytics</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li th:if="${#authorization.expression('!isAuthenticated()')}"><a href="/login" th:href="@{/account/register}" th:text="#{nav.page.register.title}">Register</a></li>
+                <li th:if="${#authorization.expression('isAuthenticated()')}"><a href="/logout" th:href="@{/logout}"  th:text="#{nav.page.logout.title}">Logout</a></li>
+            </ul>
+        </div>
+        <!--/.nav-collapse -->
+    </div>
+</div>
+</body>
+</html>

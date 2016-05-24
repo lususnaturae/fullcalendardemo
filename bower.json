@@ -1,0 +1,25 @@
+{
+  "name": "fullcalendardemo",
+  "homepage": "https://github.com/lususnaturae/fullcalendardemo",
+  "authors": [
+    "Marco Ylitorma <marco@ylitorma.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "src/main/webapp/WEB-INF/resources/static/bower_components/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^2.2.4",
+    "jquery-ui": "^1.11.4",
+    "moment": "^2.13.0",
+    "fullcalendar": "^2.7.2",
+    "bootstrap": "^3.3.6"
+  }
+}
