@@ -41,6 +41,11 @@
 
 </ul>
 
+<ul >
+    <li th:if="${#authorization.expression('isAuthenticated()')}"><a href="/calendar/calendar.html" th:href="@{/calendar}"><span th:text="#{link.calendar}">Kalenteri</span></a></li>
+
+</ul>
+
 <p th:if="${#authorization.expression('isAuthenticated()')}">
     <span sec:authentication="name">Bob</span>
 </p>

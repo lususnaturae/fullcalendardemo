@@ -7,13 +7,27 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 
     <div th:fragment="headerscripts" th:remove="tag">
-        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"/>
-        <link href="../../resources/css/project.css"
+        <link  type="text/css" rel="stylesheet"
+              href="../../../resources/static/bower_components/bootstrap/dist/css/bootstrap.css"
+              th:href="@{/resources/static/bower_components/bootstrap/dist/css/bootstrap.css}"/>
+        <link  type="text/css" rel="stylesheet"
+              href="../../../resources/static/bower_components/fullcalendar/dist/fullcalendar.css"
+              th:href="@{/resources/static/bower_components/fullcalendar/dist/fullcalendar.css}"/>
+        <link  type="text/css" href="../../resources/css/project.css"
               th:href="@{/resources/css/project.css}" rel="stylesheet" />
-        <script src="../../../resources/static/bower_components/jquery/dist/jquery.js"/>
 
-        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"/>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/holder/2.9.3/holder.min.js"/>
+        <script type="text/javascript" src="../../../resources/static/bower_components/jquery/dist/jquery.js"
+                th:src="@{/resources/static/bower_components/jquery/dist/jquery.js}"/>
+<script type="text/javascript" src="../../../resources/static/bower_components/moment/moment.js"
+                th:src="@{/resources/static/bower_components/moment/moment.js}"/>
+
+        <script type="text/javascript" src="../../../resources/static/bower_components/bootstrap/dist/js/bootstrap.js"
+                th:src="@{/resources/static/bower_components/bootstrap/dist/js/bootstrap.js}"/>
+        <script  type="text/javascript" src="../../../resources/static/bower_components/holderjs/holder.js"
+                th:src="@{/resources/static/bower_components/holderjs/holder.js}"/>
+        <script  type="text/javascript" src="../../../resources/static/bower_components/fullcalendar/dist/fullcalendar.js"
+                th:src="@{/resources/static/bower_components/fullcalendar/dist/fullcalendar.js}"/>
+
     </div>
 
 </head>
